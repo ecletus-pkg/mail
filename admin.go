@@ -10,7 +10,7 @@ func AddMailSubResource(res *admin.Resource, value interface{}, fieldName ...str
 		fieldName = []string{"Mails"}
 	}
 	r := res.NewResource(&admin.SubConfig{FieldName: fieldName[0]}, value, &admin.Config{Name: fieldName[0], Setup: func(r *admin.Resource) {
-		r.SetI18nModel(&QorMail{})
+		r.SetI18nModel(&Mail{})
 		PrepareMailResource(r)
 	}})
 	res.SetMeta(&admin.Meta{Name: fieldName[0], Resource: r})
@@ -25,5 +25,5 @@ func PrepareMailResource(res *admin.Resource) {
 }
 
 func GetResource(Admin *admin.Admin) *admin.Resource {
-	return Admin.GetResourceByID("QorMail")
+	return Admin.GetResourceByID("Mail")
 }

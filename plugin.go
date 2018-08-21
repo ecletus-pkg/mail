@@ -15,9 +15,9 @@ type Plugin struct {
 
 func (p *Plugin) OnRegister() {
 	p.AdminNames.OnInitResources(p, func(e *adminplugin.AdminEvent) {
-		e.Admin.AddResource(&QorMail{}, &admin.Config{Setup: PrepareMailResource})
+		e.Admin.AddResource(&Mail{}, &admin.Config{Setup: PrepareMailResource, Invisible: true})
 	})
 	db.Events(p).DBOnMigrateGorm(func(e *db.GormDBEvent) error {
-		return e.DB.AutoMigrate(&QorMail{}).Error
+		return e.DB.AutoMigrate(&Mail{}).Error
 	})
 }
