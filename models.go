@@ -1,13 +1,11 @@
 package mail
 
 import (
-	"github.com/aghape/db/common"
-	"github.com/aghape/db/common/mixins"
+	"github.com/moisespsena-go/aorm"
 )
 
 type Mail struct {
-	common.Model
-	mixins.CreationUpdationMixin
+	aorm.AuditedModel
 	Address string `gorm:"size:255"`
 	Note    string `gorm:"size:255"`
 }
