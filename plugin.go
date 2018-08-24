@@ -2,7 +2,7 @@ package mail
 
 import (
 	"github.com/aghape/admin"
-	"github.com/aghape/admin/adminplugin"
+	"github.com/aghape-pkg/admin"
 	"github.com/aghape/db"
 	"github.com/aghape/plug"
 )
@@ -10,11 +10,11 @@ import (
 type Plugin struct {
 	plug.EventDispatcher
 	db.DBNames
-	adminplugin.AdminNames
+	admin_plugin.AdminNames
 }
 
 func (p *Plugin) OnRegister() {
-	p.AdminNames.OnInitResources(p, func(e *adminplugin.AdminEvent) {
+	admin_plugin.Events(p).InitResources(func(e *admin_plugin.AdminEvent) {
 		e.Admin.AddResource(&Mail{}, &admin.Config{Setup: PrepareMailResource, Invisible: true})
 	})
 	db.Events(p).DBOnMigrateGorm(func(e *db.GormDBEvent) error {
