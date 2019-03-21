@@ -1,0 +1,7 @@
+Mail:
+  label*:
+    p: Endereços E-mail
+    s: Endereço E-mail
+  attributes:
+    Address: E-mail
+    Note: Nota

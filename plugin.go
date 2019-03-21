@@ -17,7 +17,7 @@ func (p *Plugin) OnRegister() {
 	admin_plugin.Events(p).InitResources(func(e *admin_plugin.AdminEvent) {
 		e.Admin.AddResource(&Mail{}, &admin.Config{Setup: PrepareMailResource, Invisible: true})
 	})
-	db.Events(p).DBOnMigrateGorm(func(e *db.GormDBEvent) error {
-		return e.DB.AutoMigrate(&Mail{}).Error
+	db.Events(p).DBOnMigrate(func(e *db.DBEvent) error {
+		return e.AutoMigrate(&Mail{}).Error
 	})
 }
