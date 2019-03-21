@@ -1,2 +1,2 @@
 # mail
-Mail resources for https://github.com/aghape framework
+Mail resources for https://github.com/ecletus framework

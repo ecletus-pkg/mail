@@ -1,7 +1,7 @@
 package mail
 
 import (
-	"github.com/aghape/admin"
+	"github.com/ecletus/admin"
 )
 
 func AddMailSubResource(res *admin.Resource, value interface{}, fieldName ...string) *admin.Resource {

@@ -1,10 +1,10 @@
 package mail
 
 import (
-	"github.com/aghape/admin"
-	"github.com/aghape-pkg/admin"
-	"github.com/aghape/db"
-	"github.com/aghape/plug"
+	"github.com/ecletus/admin"
+	"github.com/ecletus-pkg/admin"
+	"github.com/ecletus/db"
+	"github.com/ecletus/plug"
 )
 
 type Plugin struct {
